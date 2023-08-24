@@ -7,5 +7,5 @@ Saya membangun service ini untuk kemudian digunakan sebagai tempat mengunggah fi
 ## Service List
 
 1. GCP (Google Drive) | On Progress
-2. AWS (Simple Storage Service) | On Progress
+2. AWS (AWS S3) | On Progress
 3. Cloudinary | On Progress
