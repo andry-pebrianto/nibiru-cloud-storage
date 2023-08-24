@@ -8,20 +8,25 @@ const { failed } = require("./utils/createResponse");
 const app = express();
 
 // middleware
-app.use(express.json());
 app.use(
   helmet({
     crossOriginEmbedderPolicy: false,
     crossOriginResourcePolicy: false,
-  }),
+  })
 );
 app.use(cors());
 app.use(express.static("public"));
 
 // root router
-app.get("/", (req, res) => res.send(`${APP_NAME} API - ${NODE_ENV[0].toUpperCase() + NODE_ENV.slice(1)}`));
+app.get("/", (req, res) =>
+  res.send(`${APP_NAME} API - ${NODE_ENV[0].toUpperCase() + NODE_ENV.slice(1)}`)
+);
 // main router
-
+app.get("/welcome", (req, res) => {
+  res.json({
+    message: "Welcome!",
+  });
+});
 // 404 router
 app.use((req, res) => {
   failed(res, {
