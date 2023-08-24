@@ -2,7 +2,7 @@
 
 Service API untuk mengunggah file secara online. Memanfaatkan GCP, AWS, dan Cloudinary.
 
-Saya membangun service ini untuk kemudian digunakan sebagai tempat mengunggah file secara online saat sedang mengerjakan proyek latihan, portofolio, dan lainnya. Layanan ini tidak dimaksudkan digunakan dalam real-world project.
+Saya membangun service ini untuk kemudian digunakan sebagai tempat mengunggah file secara online saat sedang mengerjakan proyek latihan, portofolio, dan lainnya. Service ini tidak dimaksudkan digunakan dalam real-world project.
 
 ## Service List
 
