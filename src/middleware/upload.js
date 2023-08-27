@@ -111,7 +111,7 @@ module.exports = (req, res, next) => {
   // file yang boleh diupload tiap request hanya 1
   const multerFields = multerUpload.fields([
     {
-      name: "photo",
+      name: "image",
       maxCount: 1,
     },
     {
