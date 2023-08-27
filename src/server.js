@@ -22,11 +22,7 @@ app.get("/", (req, res) =>
   res.send(`${APP_NAME} API - ${NODE_ENV[0].toUpperCase() + NODE_ENV.slice(1)}`)
 );
 // main router
-app.get("/welcome", (req, res) => {
-  res.json({
-    message: "Welcome!",
-  });
-});
+app.use(require("./router/upload.route"));
 // 404 router
 app.use((req, res) => {
   failed(res, {
