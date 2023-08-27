@@ -1,13 +1,19 @@
 const express = require("express");
-const upload = require("../middleware/upload");
-const photoLimit = require("../middleware/photoLimit");
+const uploadImage = require("../middleware/upload.image");
+const uploadVideo = require("../middleware/upload.video");
 
 const router = express.Router();
 
-router.post("/upload/aws", upload, photoLimit, (req, res) => {
-  res.json({
-    message: "Berhasil Lolos",
+router
+  .post("/upload/aws/image", uploadImage, (req, res) => {
+    res.json({
+      message: "Berhasil Lolos",
+    });
+  })
+  .post("/upload/aws/video", uploadVideo, (req, res) => {
+    res.json({
+      message: "Berhasil Lolos",
+    });
   });
-});
 
 module.exports = router;

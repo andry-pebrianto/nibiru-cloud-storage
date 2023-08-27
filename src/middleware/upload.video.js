@@ -8,25 +8,13 @@ const multerUpload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
       try {
-        // tempat menyimpan file image
-        if (file.fieldname === "image") {
-          cb(null, "./public/image");
-        }
-
         // tempat menyimpan file video
-        else if (file.fieldname === "video") {
+        if (file.fieldname === "video") {
           cb(null, "./public/video");
         }
-
         // file jenis lain akan ditolak
         else {
-          cb(
-            {
-              message:
-                "The allowed file formats for uploading are limited to images and/or videos.",
-            },
-            false
-          );
+          cb({ message: `The fieldname "video" not found.` }, false);
         }
       } catch (error) {
         cb(error, false);
@@ -46,30 +34,8 @@ const multerUpload = multer({
   }),
   fileFilter: (req, file, cb) => {
     try {
-      // jika image
-      if (file.fieldname === "image") {
-        // filter mimetype image
-        if (
-          file.mimetype === "image/png" ||
-          file.mimetype === "image/jpg" ||
-          file.mimetype === "image/jpeg" ||
-          file.mimetype === "image/webp" ||
-          file.mimetype === "image/gif"
-        ) {
-          cb(null, true);
-        } else {
-          cb(
-            {
-              message:
-                "The accepted image extensions are only .jpg, .jpeg, .png, .webp, and .gif.",
-            },
-            false
-          );
-        }
-      }
-
       // jika video
-      else if (file.fieldname === "video") {
+      if (file.fieldname === "video") {
         // filter mimetype video
         if (
           file.mimetype === "video/mp4" ||
@@ -88,16 +54,9 @@ const multerUpload = multer({
           );
         }
       }
-
       // file jenis lain akan ditolak
       else {
-        cb(
-          {
-            message:
-              "The allowed file formats for uploading are limited to images and/or videos.",
-          },
-          false
-        );
+        cb({ message: `The fieldname "video" not found.` }, false);
       }
     } catch (error) {
       cb(error, false);
@@ -110,10 +69,6 @@ const multerUpload = multer({
 module.exports = (req, res, next) => {
   // file yang boleh diupload tiap request hanya 1
   const multerFields = multerUpload.fields([
-    {
-      name: "image",
-      maxCount: 1,
-    },
     {
       name: "video",
       maxCount: 1,
