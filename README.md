@@ -6,13 +6,13 @@ Saya membangun service ini untuk kemudian digunakan sebagai tempat mengunggah ga
 
 Service ini tidak dimaksudkan digunakan dalam real-world project.
 
-## Daftar Service
+## Service Available
 
 1. AWS (S3) ✅
 2. GCP (Google Drive) | On Progress
 3. Cloudinary | On Progress
 
-## Daftar Endpoint
+## Endpoint List
 
 ### /upload/aws
 
@@ -40,3 +40,21 @@ COMING SOON
 ### /upload/cloudinary
 
 COMING SOON
+
+## Demo
+
+https://nibiru-cloud-storage.onrender.com
+
+<b>Note</b>: API mungkin akan loading cukup lama, hal ini wajar karena saya meng-hosting API-nya di layanan PaaS gratisan. Tolong bersabar 😆.
+
+## Authors
+
+Contributors names and contact info:
+
+1. Andry Pebrianto
+
+- [Linkedin](https://www.linkedin.com/in/andry-pebrianto)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
