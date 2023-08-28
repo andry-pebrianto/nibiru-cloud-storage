@@ -1,7 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
-const path = require("path");
 const { APP_NAME, NODE_ENV, PORT } = require("./src/utils/env");
 const { failed } = require("./src/utils/createResponse");
 
@@ -16,7 +15,6 @@ app.use(
   })
 );
 app.use(cors());
-app.use(express.static(path.join(__dirname, "public")));
 
 // root router
 app.get("/", (req, res) =>
