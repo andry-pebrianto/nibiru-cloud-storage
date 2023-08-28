@@ -10,7 +10,8 @@ const multerUpload = multer({
       try {
         // tempat menyimpan file video
         if (file.fieldname === "video") {
-          cb(null, "./public/video");
+          const videoDir = path.join(process.cwd(), 'public/video');
+          cb(null, videoDir);
         }
         // file jenis lain akan ditolak
         else {

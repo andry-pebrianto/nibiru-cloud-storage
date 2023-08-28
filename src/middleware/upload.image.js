@@ -10,7 +10,8 @@ const multerUpload = multer({
       try {
         // tempat menyimpan file image
         if (file.fieldname === "image") {
-          cb(null, "./public/image");
+          const imageDir = path.join(process.cwd(), 'public/image');
+          cb(null, imageDir);
         }
         // file jenis lain akan ditolak
         else {
