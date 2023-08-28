@@ -14,9 +14,13 @@ const multerUpload = multer({
         }
         // file jenis lain akan ditolak
         else {
-          cb({ message: `The fieldname "video" not found.` }, false);
+          cb(
+            { message: `The fieldname "video" not found.`, statusCode: 400 },
+            false
+          );
         }
       } catch (error) {
+        error.statusCode = 500;
         cb(error, false);
       }
     },
@@ -28,6 +32,7 @@ const multerUpload = multer({
         const filename = `${name}${ext}`;
         cb(null, filename);
       } catch (error) {
+        error.statusCode = 500;
         cb(error, false);
       }
     },
@@ -49,6 +54,7 @@ const multerUpload = multer({
             {
               message:
                 "The accepted video extensions are only .mp4, .webm, .avi, and .mkv.",
+              statusCode: 400,
             },
             false
           );
@@ -56,9 +62,13 @@ const multerUpload = multer({
       }
       // file jenis lain akan ditolak
       else {
-        cb({ message: `The fieldname "video" not found.` }, false);
+        cb(
+          { message: `The fieldname "video" not found.`, statusCode: 400 },
+          false
+        );
       }
     } catch (error) {
+      error.statusCode = 500;
       cb(error, false);
     }
   },
@@ -80,10 +90,16 @@ module.exports = (req, res, next) => {
     if (err) {
       if (err.code === "LIMIT_FILE_SIZE") {
         err.message = `The uploaded file (${err.field}) is too large, exceeding the maximum limit of 30MB.`;
+        err.statusCode = 400;
+      }
+
+      if (err.code === "LIMIT_UNEXPECTED_FILE") {
+        err.message = `Unexpected field (${err.field}).`;
+        err.statusCode = 400;
       }
 
       failed(res, {
-        code: 400,
+        code: err.statusCode || 500,
         payload: err.message,
         message: "Upload File Error",
       });

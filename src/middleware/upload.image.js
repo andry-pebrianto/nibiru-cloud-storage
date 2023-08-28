@@ -95,7 +95,7 @@ module.exports = (req, res, next) => {
       }
 
       if (err.code === "LIMIT_UNEXPECTED_FILE") {
-        err.message = `Each upload (${err.field}) request is only allowed to include one file.`;
+        err.message = `Unexpected field (${err.field}).`;
         err.statusCode = 400;
       }
 
