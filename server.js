@@ -2,8 +2,8 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
-const { APP_NAME, NODE_ENV, PORT } = require("./utils/env");
-const { failed } = require("./utils/createResponse");
+const { APP_NAME, NODE_ENV, PORT } = require("./src/utils/env");
+const { failed } = require("./src/utils/createResponse");
 
 // deklarasi express
 const app = express();
@@ -23,7 +23,7 @@ app.get("/", (req, res) =>
   res.send(`${APP_NAME} API - ${NODE_ENV[0].toUpperCase() + NODE_ENV.slice(1)}`)
 );
 // main router
-app.use(require("./router/upload.aws.route"));
+app.use(require("./src/router/upload.aws.route"));
 // 404 router
 app.use((req, res) => {
   failed(res, {
@@ -39,3 +39,6 @@ app.listen(PORT, () => {
   console.log(`Visit http://localhost:${PORT}`);
   console.log("Developed by Andry Pebrianto");
 });
+
+// Export the Express API (for vercel hosting)
+module.exports = app;
