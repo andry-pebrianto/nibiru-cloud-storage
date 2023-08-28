@@ -7,7 +7,7 @@ module.exports = (file) => {
 
   const parameter = {
     Bucket: AWS_BUCKET_NAME,
-    Key: `${new Date().getTime()}-${file.filename}`,
+    Key: `nibiru-cloud-storage/${new Date().getTime()}-${file.filename}`,
     Body: fs.createReadStream(file.path),
     ContentType: file.mimetype,
   };
