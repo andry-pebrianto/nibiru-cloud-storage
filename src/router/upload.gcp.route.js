@@ -9,7 +9,7 @@ const {
 const router = express.Router();
 
 router
-  .post("/upload/aws/image", uploadImage, uploadGCPImage)
-  .post("/upload/aws/video", uploadVideo, uploadGCPVideo);
+  .post("/upload/gcp/image", uploadImage, uploadGCPImage)
+  .post("/upload/gcp/video", uploadVideo, uploadGCPVideo);
 
 module.exports = router;
