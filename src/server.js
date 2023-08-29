@@ -23,6 +23,7 @@ app.get("/", (req, res) =>
 // main router
 app.use(require("./router/upload.aws.route"));
 app.use(require("./router/upload.gcp.route"));
+app.use(require("./router/upload.cloudinary.route"));
 // 404 router
 app.use((req, res) => {
   failed(res, {
