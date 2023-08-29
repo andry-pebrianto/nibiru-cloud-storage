@@ -12,18 +12,19 @@ module.exports = (file) => {
     api_secret: CLOUDINARY_API_SECRET,
   });
 
+  console.log(file);
+
   return new Promise((resolve, reject) => {
-    cloudinary.uploader.upload(
-      file.path,
-      {
-        folder: "nibiru-cloud-storage",
-      },
-      function (error, result) {
-        if (error) {
-          return reject(error);
-        }
-        return resolve(result.secure_url);
+    const opt = { folder: "nibiru-cloud-storage" };
+
+    // jika file yg diuplaod adalah video
+    if (file.fieldname === "video") opt.resource_type = "video";
+
+    cloudinary.uploader.upload(file.path, opt, function (error, result) {
+      if (error) {
+        return reject(error);
       }
-    );
+      return resolve(result.secure_url);
+    });
   });
 };
