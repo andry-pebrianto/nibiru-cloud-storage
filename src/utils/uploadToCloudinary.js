@@ -17,7 +17,7 @@ module.exports = (file) => {
   return new Promise((resolve, reject) => {
     const opt = { folder: "nibiru-cloud-storage" };
 
-    // jika file yg diuplaod adalah video
+    // jika file yg diupload adalah video
     if (file.fieldname === "video") opt.resource_type = "video";
 
     cloudinary.uploader.upload(file.path, opt, function (error, result) {
