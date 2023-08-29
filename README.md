@@ -9,7 +9,7 @@ Service ini tidak dimaksudkan digunakan dalam real-world project.
 ## Service Available
 
 1. AWS (S3) ✅
-2. GCP (Google Drive) | On Progress
+2. GCP (Google Drive) ✅
 3. Cloudinary | On Progress
 
 ## Endpoint List
@@ -35,7 +35,22 @@ Service ini tidak dimaksudkan digunakan dalam real-world project.
 
 ### /upload/gcp
 
-COMING SOON
+- POST | `/upload/gcp/image`
+  - Body:
+    - image (required | file)
+  - Rules:
+    - File extension yang diterima: ( .jpg | .jpeg | .png | .webp | .gif ).
+    - File size yang dikirim tidak boleh melebihi 2MB.
+    - Hanya boleh melampirkan 1 file di setiap request.
+  - Desc: Endpoint untuk mengunggah file gambar secara online menggunakan Google Drive.
+- POST | `/upload/gcp/video`
+  - Body:
+    - video (required | file)
+  - Rules:
+    - File extension yang diterima: ( .mp4 | .webm | .avi | .mkv ).
+    - File size yang dikirim tidak boleh melebihi 30MB.
+    - Hanya boleh melampirkan 1 file di setiap request.
+  - Desc: Endpoint untuk mengunggah file video secara online menggunakan Google Drive.
 
 ### /upload/cloudinary
 
@@ -51,7 +66,7 @@ https://nibiru-cloud-storage.onrender.com
 
 Contributors names and contact info:
 
-1. Andry Pebrianto
+1. Andry Pebrianto.
 
 - [Linkedin](https://www.linkedin.com/in/andry-pebrianto)
 
