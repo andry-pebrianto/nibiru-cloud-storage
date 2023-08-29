@@ -54,7 +54,7 @@ const multerUpload = multer({
           cb(
             {
               message:
-                "The accepted image extensions are only .jpg, .jpeg, .png, .webp, and .gif.",
+                "The accepted image extensions are only .jpg, .png, .webp, and .gif.",
               statusCode: 400,
             },
             false

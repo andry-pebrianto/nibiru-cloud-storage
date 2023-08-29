@@ -10,7 +10,7 @@ Service ini tidak dimaksudkan digunakan dalam real-world project.
 
 1. AWS (S3) ✅
 2. GCP (Google Drive) ✅
-3. Cloudinary | On Progress
+3. Cloudinary ✅
 
 ## Endpoint List
 
@@ -20,7 +20,7 @@ Service ini tidak dimaksudkan digunakan dalam real-world project.
   - Body:
     - image (required | file)
   - Rules:
-    - File extension yang diterima: ( .jpg | .jpeg | .png | .webp | .gif ).
+    - File extension yang diterima: ( .jpg | .png | .webp | .gif ).
     - File size yang dikirim tidak boleh melebihi 2MB.
     - Hanya boleh melampirkan 1 file di setiap request.
   - Desc: Endpoint untuk mengunggah file gambar secara online menggunakan AWS S3.
@@ -39,7 +39,7 @@ Service ini tidak dimaksudkan digunakan dalam real-world project.
   - Body:
     - image (required | file)
   - Rules:
-    - File extension yang diterima: ( .jpg | .jpeg | .png | .webp | .gif ).
+    - File extension yang diterima: ( .jpg | .png | .webp | .gif ).
     - File size yang dikirim tidak boleh melebihi 2MB.
     - Hanya boleh melampirkan 1 file di setiap request.
   - Desc: Endpoint untuk mengunggah file gambar secara online menggunakan Google Drive.
@@ -54,7 +54,22 @@ Service ini tidak dimaksudkan digunakan dalam real-world project.
 
 ### /upload/cloudinary
 
-COMING SOON
+- POST | `/upload/cloudinary/image`
+  - Body:
+    - image (required | file)
+  - Rules:
+    - File extension yang diterima: ( .jpg | .png | .webp | .gif ).
+    - File size yang dikirim tidak boleh melebihi 2MB.
+    - Hanya boleh melampirkan 1 file di setiap request.
+  - Desc: Endpoint untuk mengunggah file gambar secara online menggunakan Cloudinary.
+- POST | `/upload/cloudinary/video`
+  - Body:
+    - video (required | file)
+  - Rules:
+    - File extension yang diterima: ( .mp4 | .webm | .avi | .mkv ).
+    - File size yang dikirim tidak boleh melebihi 30MB.
+    - Hanya boleh melampirkan 1 file di setiap request.
+  - Desc: Endpoint untuk mengunggah file video secara online menggunakan Cloudinary.
 
 ## Demo
 
