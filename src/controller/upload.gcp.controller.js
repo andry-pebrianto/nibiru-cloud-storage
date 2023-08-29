@@ -12,6 +12,13 @@ module.exports = {
         if (req.files.image) {
           image = await uploadGoogleDrive(req.files.image[0]);
           deleteFile(req.files.image[0].path);
+        } else {
+          failed(res, {
+            code: 400,
+            payload: `The fieldname "image" does not have a file object.`,
+            message: "Upload Failed",
+          });
+          return;
         }
       } else {
         failed(res, {
@@ -46,6 +53,13 @@ module.exports = {
         if (req.files.video) {
           video = await uploadGoogleDrive(req.files.video[0]);
           deleteFile(req.files.video[0].path);
+        } else {
+          failed(res, {
+            code: 400,
+            payload: `The fieldname "video" does not have a file object.`,
+            message: "Upload Failed",
+          });
+          return;
         }
       } else {
         failed(res, {
