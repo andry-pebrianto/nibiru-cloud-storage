@@ -77,6 +77,10 @@ https://nibiru-cloud-storage.onrender.com
 
 <b>Note</b>: API mungkin akan loading cukup lama, hal ini wajar karena saya meng-hosting API-nya di layanan PaaS gratisan. Tolong bersabar 😆.
 
+## Try It Out
+
+https://try-nibiru-cloud.netlify.app/
+
 ## Authors
 
 Contributors names and contact info:
