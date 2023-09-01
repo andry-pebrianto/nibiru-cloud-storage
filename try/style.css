@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 1000px;
+  background-color: #F9F5F6;
+}
+
+/* style aws */
+.aws-box {
+  margin-top: 30px;
+}
+
+.aws-box .title {
+  font-size: 20px;
+}
+
+.aws-box .aws-item {
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.aws-box .aws-item form {
+  margin-top: 10px;
+}
+
+.aws-box .aws-item label {
+  font-weight: bold;
+}
+
+.aws-box .aws-item input {
+  margin-top: 7px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.aws-box .aws-item button {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* utilities */
+.text-center {
+  text-align: center;
+}

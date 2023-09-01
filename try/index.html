@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try Nibiru Cloud Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Try Nibiru Cloud Storage</h1>
+    <div class="aws-box">
+      <p class="title">AWS (Amazon Simple Storage Service)</p>
+      <div class="aws-item">
+        <form action="https://nibiru-cloud-storage.onrender.com/upload/aws/image" method="post"
+          enctype="multipart/form-data" target="_blank">
+          <label for="awsImage">AWS Image (jpg, .png, .webp, and .gif)</label>
+          <input type="file" id="awsImage" name="image" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="aws-item">
+        <form action="https://nibiru-cloud-storage.onrender.com/upload/aws/video" method="post"
+          enctype="multipart/form-data" target="_blank">
+          <label for="awsVideo">AWS Video (.mp4, .webm, .avi, and .mkv)</label>
+          <input type="file" id="awsVideo" name="video" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
