@@ -45,7 +45,7 @@ const multerUpload = multer({
         if (
           file.mimetype === "video/mp4" ||
           file.mimetype === "video/webm" ||
-          file.mimetype === "video/x-msvideo" || // avi
+          file.mimetype === "video/avi" ||
           file.mimetype === "video/x-matroska" // mkv
         ) {
           cb(null, true);
