@@ -11,9 +11,10 @@
 <body>
   <div class="container">
     <h1 class="text-center">Try Nibiru Cloud Storage</h1>
-    <div class="aws-box">
-      <p class="title">AWS (Amazon Simple Storage Service)</p>
-      <div class="aws-item">
+    <!-- AWS -->
+    <div class="service-box">
+      <p class="title">AWS (Simple Storage Service)</p>
+      <div class="service-item">
         <form action="https://nibiru-cloud-storage.onrender.com/upload/aws/image" method="post"
           enctype="multipart/form-data" target="_blank">
           <label for="awsImage">AWS Image (jpg, .png, .webp, and .gif)</label>
@@ -21,11 +22,51 @@
           <button type="submit">Submit</button>
         </form>
       </div>
-      <div class="aws-item">
+      <div class="service-item">
         <form action="https://nibiru-cloud-storage.onrender.com/upload/aws/video" method="post"
           enctype="multipart/form-data" target="_blank">
           <label for="awsVideo">AWS Video (.mp4, .webm, .avi, and .mkv)</label>
           <input type="file" id="awsVideo" name="video" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- GCP -->
+    <div class="service-box">
+      <p class="title">GCP (Google Drive)</p>
+      <div class="service-item">
+        <form action="https://nibiru-cloud-storage.onrender.com/upload/gcp/image" method="post"
+          enctype="multipart/form-data" target="_blank">
+          <label for="gcpImage">GCP Image (jpg, .png, .webp, and .gif)</label>
+          <input type="file" id="gcpImage" name="image" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="service-item">
+        <form action="https://nibiru-cloud-storage.onrender.com/upload/gcp/video" method="post"
+          enctype="multipart/form-data" target="_blank">
+          <label for="gcpVideo">GCP Video (.mp4, .webm, .avi, and .mkv)</label>
+          <input type="file" id="gcpVideo" name="video" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- Cloudinary -->
+    <div class="service-box">
+      <p class="title">Cloudinary</p>
+      <div class="service-item">
+        <form action="https://nibiru-cloud-storage.onrender.com/upload/cloudinary/image" method="post"
+          enctype="multipart/form-data" target="_blank">
+          <label for="cloudinaryImage">Cloudinary Image (jpg, .png, .webp, and .gif)</label>
+          <input type="file" id="cloudinaryImage" name="image" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="service-item">
+        <form action="https://nibiru-cloud-storage.onrender.com/upload/cloudinary/video" method="post"
+          enctype="multipart/form-data" target="_blank">
+          <label for="cloudinaryVideo">Cloudinary Video (.mp4, .webm, .avi, and .mkv)</label>
+          <input type="file" id="cloudinaryVideo" name="video" required>
           <button type="submit">Submit</button>
         </form>
       </div>
