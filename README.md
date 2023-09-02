@@ -79,7 +79,7 @@ https://nibiru-cloud-storage.onrender.com
 
 ## Try It Out
 
-https://try-nibiru-cloud.netlify.app/
+https://try-nibiru-cloud.netlify.app
 
 ## Authors
 
